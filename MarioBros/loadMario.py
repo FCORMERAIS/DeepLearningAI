@@ -17,7 +17,7 @@ env = GrayScaleObservation(env,keep_dim=True)
 env = DummyVecEnv([lambda : env])
 env = VecFrameStack(env, 4,channels_order='last')
 
-model = PPO.load('./train/best_model2_500000')
+model = PPO.load('./train/best_model2_200000')
 state = env.reset()
 while True :
     action,_ = model.predict(state)
